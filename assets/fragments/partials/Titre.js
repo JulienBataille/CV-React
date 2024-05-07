@@ -10,7 +10,7 @@ class Titre extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://127.0.0.1:8000/infos')
+        fetch('https://127.0.0.1:8000/infos')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error ${response.status}`);
@@ -18,6 +18,9 @@ class Titre extends React.Component {
                 return response.json();
             })
             .then(data => {
+               
+
+                // Vérifiez si les données ont `message` et `message.metiers` et si c'est un tableau
                 if (data && data.message[0] && Array.isArray(data.message[0].metier)) {
                     this.setState({ metiers: data.message[0].metier });
                 } else {
@@ -31,24 +34,25 @@ class Titre extends React.Component {
             });
     }
 
-    render() {
-        const { metiers, error } = this.state;
-        if (error) {
-        console.log(metiers);
+render() {
+    const { metiers, error } = this.state;
 
-            return <div>Error: {error}</div>;
-        }
-
-        if (metiers.length === 0) {
-            return <div>Loading...</div>;
-        } 
-
-        return (
-            <>
-                {metiers.map(metier =>
-                (<p key={ metier.id }>{metier.title}</p>
-                ))} </>);
+    if (error) {
+        return <div>Error: {error}</div>;
     }
+
+    if (metiers.length === 0) {
+        return <div>Loading...</div>;
+    }
+
+    return (
+        <>
+        {metiers.map(metier => (
+            <p key={metier.id}>{ metier.title }</p>
+        ))} 
+        
+        </>);
+}
 }
 
 export default Titre;

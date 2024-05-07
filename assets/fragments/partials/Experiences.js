@@ -10,7 +10,7 @@ class Experiences extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://127.0.0.1:8000/experience')
+        fetch('https://127.0.0.1:8000/experience')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error ${response.status}`);
@@ -25,6 +25,7 @@ class Experiences extends React.Component {
                 console.error('Error fetching data:', error);
                 this.setState({ error: error.message });
             });
+            console
     }
 
     render() {

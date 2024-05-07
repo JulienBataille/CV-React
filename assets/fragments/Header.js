@@ -20,7 +20,7 @@ class Header extends React.Component {
                         </div>
                         <div className="de-flex-col header-col-right">
                             <ul id="mainmenu">
-                                <li><a className="active" href="index.html#top">Cacaa<span></span></a></li>
+                                <li><a className="active" href="index.html#top">Home<span></span></a></li>
                                 <li><a href="index.html#section-about">About me<span></span></a></li>
                                 <li><a href="index.html#section-services">What I Do<span></span></a></li>
                                 <li><a href="index.html#section-portfolio">Portfolio<span></span></a></li>

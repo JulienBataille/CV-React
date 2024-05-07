@@ -11,7 +11,7 @@ class JeFais extends React.Component {
         }
     
         componentDidMount() {
-            fetch('http://127.0.0.1:8000/infos')
+            fetch('https://127.0.0.1:8000/infos')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(`HTTP error ${response.status}`);

@@ -15,7 +15,7 @@ class Portfolio extends React.Component {
                                 <div className="space-border"></div>
                             </div>
                         </div>
-                        <div id="gallery" className="row sequence">
+                        <div className="row sequence">
                            <PortfolioItem />
                         </div>
                     </div>

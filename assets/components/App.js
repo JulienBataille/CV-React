@@ -30,8 +30,9 @@ class App extends React.Component {
                             <button className="button-close"></button>
                             <div className="d-modal-loader"></div>
                         </div>
-                       <Presentation/>
-                        <AboutMe/>
+                        <Presentation />
+
+                        <AboutMe />
                         <section id="section-my-quote" aria-label="section" className="jarallax no-top no-bottom">
                             <div className="de-gradient-edge-top"></div>
                             <img src="/images/background/2.jpg" className="jarallax-img" alt="" />
@@ -51,9 +52,9 @@ class App extends React.Component {
                             </div>
                             <div className="de-gradient-edge-bottom"></div>
                         </section>
-                        <WhatIDo/>
-                    <Portfolio/>
-                        <Resume/>
+                        <WhatIDo />
+                        <Portfolio />
+                        <Resume />
                         <section id="section-fun-facts" aria-label="section" className="jarallax">
                             <div className="de-gradient-edge-top"></div>
                             <img src="/images/background/3.jpg" className="jarallax-img" alt="" />

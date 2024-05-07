@@ -10,7 +10,7 @@ class Capa extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://127.0.0.1:8000/infos')
+        fetch('https://127.0.0.1:8000/infos')
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error ${response.status}`);
@@ -18,7 +18,7 @@ class Capa extends React.Component {
                 return response.json();
             })
             .then(data => {
-                // console.log(data.message[0]); // Pour déboguer et voir la structure des données
+                console.log(data.message[0]); // Pour déboguer et voir la structure des données
 
                 // Vérifiez si les données ont `message` et `message.capacities` et si c'est un tableau
                 if (data && data.message[0] && Array.isArray(data.message[0].capacities)) {
@@ -27,6 +27,7 @@ class Capa extends React.Component {
                     console.error('Data does not contain valid capacities data');
                     this.setState({ error: 'Data does not contain valid capacities data' });
                 }
+                console.log(this.state.capacities);
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
@@ -43,7 +44,8 @@ class Capa extends React.Component {
 
         if (capacities.length === 0) {
             return <div>Loading...</div>;
-        }
+        } 
+        console.log(capacities);
 
         return (
             <>
